@@ -1,200 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Maggi</title>
-    <link rel="icon" href="favicon.png" type="image/png" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=chevron_right" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maggi</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: row;
+    }
 
-    <style>
-       html, body{
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-        }
-        #left{
-            height: 100%;
-            width: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-sizing: border-box;
-            box-shadow: 20px 0 30px rgba(0, 0, 0, 0.07);
-            position: relative;
-        }
-     img[alt="zigzag"] {
-            width: 100%;
-            object-fit: cover;
-        }
-        img[alt="logo"]{
-            height: 72px;
-            object-fit: cover;
-            position: absolute;
-            right: -25%; 
-            top: 65px; 
-            transform: translateY(-50%);
-        }
+    #left {
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 20px 0 30px rgba(0, 0, 0, 0.07);
+      position: relative;
+    }
 
-        #bl{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-        #bl img{
-            height: 30px;
-            width: 30px;
-            opacity:0.5;
-        }
-        #bl img:hover {
-            opacity:1
-        }
-        #bl ul li{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-top: 35px;
-            margin-right: 35px;
-            font-size: 12px;
-            color: gray;
-            white-space: nowrap; 
-        }
+    img[alt="zigzag"] {
+      width: 100%;
+      object-fit: cover;
+    }
 
+    img[alt="logo"] {
+      height: 72px;
+      object-fit: cover;
+      position: absolute;
+      right: -25%;
+      top: 65px;
+      transform: translateY(-50%);
+    }
 
-        #middle{
+    #bl {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
 
-            height: 100%;
-            width: 100%;
-            margin: 50px;
-            padding: 15px 90px;
-            color: #333334;
-            flex: 1; 
-            box-sizing: border-box; 
-        }
-        #half{
-            width: 50%;
-            height: 500px;
-        }
+    #bl img {
+      height: 30px;
+      width: 30px;
+      opacity: 0.5;
+    }
 
-        #last ul li{
-            font-size: large;
-   
-            list-style: none;
-            background-image: url("https://i.imgur.com/lRfEjQA.png") ;
-            
-            background-size: 33px 33px;
-            background-repeat: no-repeat; 
-    
-    padding-left: 40px;
-    margin-bottom:20px ;
-        }
-        button:hover {
-            background: linear-gradient(to right, #ece841,  #ece841); 
-            color: #333333;
-        }
-        .feedback-button {
-            position: fixed; 
-            bottom: 75%;
-            right: -37px; 
-            z-index: 1000; 
-        }
+    #bl img:hover {
+      opacity: 1;
+    }
 
-    </style>
+    #bl ul li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 35px;
+      font-size: 12px;
+      color: gray;
+      white-space: nowrap;
+    }
+
+    #middle {
+      flex: 1;
+      padding: 30px;
+    }
+
+    #middle > div {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    #half {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    #last ul li {
+      font-size: large;
+      list-style: none;
+      background-image: url("https://i.imgur.com/lRfEjQA.png");
+      background-size: 33px 33px;
+      background-repeat: no-repeat;
+      padding-left: 40px;
+      margin-bottom: 20px;
+    }
+
+    input, button {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    input {
+      padding: 25px 15px;
+      border: 2px solid #d9d9d9;
+      font-size: medium;
+      margin-bottom: 30px;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 15px;
+      background-color: #333;
+      color: white;
+      border: none;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #ece841, #ece841);
+      color: #333;
+    }
+
+    .feedback-button {
+      position: fixed;
+      bottom: 50%;
+      right: -35px;
+      transform: rotate(-90deg);
+    }
+
+    /* 🔻 Responsive Fixes */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      #left {
+        display: none;
+      }
+
+      #middle > div {
+        flex-direction: column;
+        padding: 0;
+      }
+
+      .feedback-button {
+        display: none;
+      }
+
+      #half {
+        border-left: none !important;
+        padding: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="left">
-        <img src="https://i.imgur.com/B2xQGfr.png" alt="zigzag">
-        <img src="https://www.maggi.in/sites/default/files/maggi_logo_png_0.png" alt="logo">
-        <div id="bl">
-            <ul style="list-style: none;">
-                <li>
-<img src="https://www.maggi.in/sites/default/files/2020-01/01_Rezepte.svg" alt="bl1">
-<span>Recipes</span>
-                </li>
-                <li>
-                    <img src="https://www.maggi.in/sites/default/files/2019-12/05_Maggi.svg" alt="bl1">
-                    <span>Maggie</span>
-                                    </li>
-                                    <li>
-                                        <img src="https://www.maggi.in/sites/default/files/2022-12/LogoMealPlanner_0.svg" alt="bl1">
-                                        <span>MyMenu Plan</span>
-                                                        </li><li>
-                                                            <img src="https://www.maggi.in/sites/default/files/2019-12/03_Suche_11.svg" alt="bl1">
-                                                            <span>Search</span>
-                                                                            </li><li>
-                                                                                <img style="opacity: 0.9;" src="https://www.maggi.in/sites/default/files/2020-07/MAGGI_Navigation_MyMaggi_0_0.svg" alt="bl1">
-                                                                                <span style="margin-right: 5px;">Login</span>
-                                                                                                </li>
-        </ul></div>
+  <div id="left">
+    <img src="https://i.imgur.com/B2xQGfr.png" alt="zigzag">
+    <img src="https://www.maggi.in/sites/default/files/maggi_logo_png_0.png" alt="logo">
+    <div id="bl">
+      <ul style="list-style: none;">
+        <li><img src="https://www.maggi.in/sites/default/files/2020-01/01_Rezepte.svg" alt="bl1"><span>Recipes</span></li>
+        <li><img src="https://www.maggi.in/sites/default/files/2019-12/05_Maggi.svg" alt="bl1"><span>Maggie</span></li>
+        <li><img src="https://www.maggi.in/sites/default/files/2022-12/LogoMealPlanner_0.svg" alt="bl1"><span>MyMenu Plan</span></li>
+        <li><img src="https://www.maggi.in/sites/default/files/2019-12/03_Suche_11.svg" alt="bl1"><span>Search</span></li>
+        <li><img style="opacity: 0.9;" src="https://www.maggi.in/sites/default/files/2020-07/MAGGI_Navigation_MyMaggi_0_0.svg" alt="bl1"><span>Login</span></li>
+      </ul>
     </div>
-    
-    <div id="middle">
-        <p style="margin-bottom: 0;font-size: 45px;font-weight:550;">My Maggi</p>
-        <div style="display: flex;flex-direction: row;">
-        <div id="half">
-            <p style="margin-top: 0;font-size: 40px;font-weight:510;">Welcome back!</p>
-            <div>
-            <div style="display: inline-flex;flex-direction: column;">
-            <div style="background-color: #3c5f9b;width:auto;display: inline-flex;color: white; box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);margin-bottom: 35px;"><img style="height: 30px;width: auto;" src="https://i.imgur.com/iqTjNB6.png" alt="fb"><span style="padding-right: 15px;padding-top: 2.5px;padding-bottom: 2.5px;padding-left: 5px;"> Sign in with Facebook   </span></div>
-            <div style="background-color: white;width:auto;display: inline-flex;color: #393939; box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);"><img style="height: 30px;width: auto;" src="https://i.imgur.com/nvxjtTx.png" alt="g"><span style="padding-right: 15px;padding-top: 2.5px;padding-bottom: 2.5px;padding-left: 5px;"> Sign in with Google </span></div>
-            </div></div>  
-            <div style="display: inline-flex;flex-direction: column;margin-top: 70px;">
-            <label style="opacity: 0.5;font-size: small;" for="email">E-mail</label>
-<input style="padding: 25px 15px;border:2px solid #d9d9d9;width: 400px;font-size:medium;margin-bottom: 40px;" type="email" id="email" name="email" placeholder="Enter your e-mail address here*" required>
-<label style="opacity: 0.5; font-size: small;" for="password">Password</label>
-<input style="padding: 25px 15px;border:2px solid #d9d9d9;width: 400px;font-size:medium;margin-bottom: 40px;"  type="password" 
-id="password" 
-name="password" 
-placeholder="Enter your password here*" 
-required>
-      <button style="display: flex; align-items: center;justify-content: center;padding: 25px 15px; background-color: #333333; color: white; border: none; font-size: 18px;font-weight: 500; cursor: pointer; text-align: center;margin-bottom: 20px;box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1)">
-        <span class="material-symbols-outlined" style="color: #ece841;">
-            chevron_right
-            </span> Login via e-mail
-      </button>
-      <p style=" text-align: right; text-decoration: underline; line-height: 10px;">Forgot your Password?</p>
-            </div> 
-           </div>
-           <div id="half" style="display: flex;margin-top: 0;flex-direction: column;border-left: 2px solid #d9d9d9;">    
+  </div>
 
-
-             <p style="font-size: 40px;font-weight: 550;margin-top: 0;text-align: center;">Not registered yet?</p>
-             <button style="display: flex; align-items: center;justify-content: center;padding: 25px 15px; background-color: #333333; color: white; border: none; font-size: 18px;font-weight: 500; cursor: pointer; text-align: center;margin-bottom: 20px;box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);margin-left: 15%;margin-right: 8%;">
-                <span class="material-symbols-outlined" style="color: #ece841;">
-                    chevron_right
-                    </span>Register
-              </button>
-              <div id="last" style="margin:5% 15%;">
-              <p style="font-size: 25px;font-weight: 520;margin-top: 20px;text-align: left;">Join Maggi today!</p>
-              <ul style="padding-bottom: 20px;">
-                <li>Your Personal newsletter with exciting recipes and ideas</li>
-                <li>Personalize your newsletter to your preferences</li>
-                <li>Get to know about maggi products</li>
-              </ul>
-              </div>
-            </div>
+  <div id="middle">
+    <p style="font-size: 45px; font-weight: 550;">My Maggi</p>
+    <div>
+      <div id="half">
+        <p style="font-size: 40px; font-weight: 510;">Welcome back!</p>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="background-color: #3c5f9b; display: flex; color: white;">
+            <img style="height: 30px;" src="https://i.imgur.com/iqTjNB6.png" alt="fb" />
+            <span style="padding: 5px 15px;">Sign in with Facebook</span>
+          </div>
+          <div style="background-color: white; display: flex; color: #393939;">
+            <img style="height: 30px;" src="https://i.imgur.com/nvxjtTx.png" alt="g" />
+            <span style="padding: 5px 15px;">Sign in with Google</span>
+          </div>
         </div>
-    </div>
-    <div class="feedback-button">
-        <button style="  background-color: #3e2b1a;
-        color: white;
-        size: 10px;
-        font-size: 12px;
-        transform: rotate(-90deg);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-right: 12px;
-        padding-left: 0;">
-            <span class="material-symbols-outlined" style="color: #ece841;">chevron_right</span> FEEDBACK
+
+        <div style="margin-top: 40px;">
+          <label style="opacity: 0.5; font-size: small;">E-mail</label>
+          <input type="email" placeholder="Enter your e-mail address here*" required />
+
+          <label style="opacity: 0.5; font-size: small;">Password</label>
+          <input type="password" placeholder="Enter your password here*" required />
+
+          <button>
+            <span class="material-symbols-outlined" style="color: #ece841;">chevron_right</span> Login via e-mail
+          </button>
+          <p style="text-align: right; text-decoration: underline;">Forgot your Password?</p>
+        </div>
+      </div>
+
+      <div id="half" style="border-left: 2px solid #d9d9d9;">
+        <p style="font-size: 40px; font-weight: 550; text-align: center;">Not registered yet?</p>
+        <button style="margin: 0 15%;">
+          <span class="material-symbols-outlined" style="color: #ece841;">chevron_right</span> Register
         </button>
+        <div id="last" style="margin: 5% 15%;">
+          <p style="font-size: 25px; font-weight: 520;">Join Maggi today!</p>
+          <ul>
+            <li>Your Personal newsletter with exciting recipes and ideas</li>
+            <li>Personalize your newsletter to your preferences</li>
+            <li>Get to know about maggi products</li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div class="feedback-button">
+    <button style="background-color: #3e2b1a; color: white; font-size: 12px;">
+      <span class="material-symbols-outlined" style="color: #ece841;">chevron_right</span> FEEDBACK
+    </button>
+  </div>
 </body>
 </html>
